@@ -1,0 +1,45 @@
+{
+    "version": "23.1.2",
+    "description": "LLVM and Clang development toolchain",
+    "homepage": "https://llvm.org/",
+    "license": "Apache-2.0 WITH LLVM-exception",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/clang+llvm-23.1.2-x86_64-pc-windows-msvc.tar.xz",
+            "hash": "8fb91cdc44fcbbdcf6b3ffd0a1f9859abd14a3c3aae4423c2b6d4a4f90bf0095",
+            "extract_dir": "clang+llvm-23.1.2-x86_64-pc-windows-msvc",
+            "bin": [
+                "bin\\clang.exe",
+                "bin\\clang++.exe",
+                "bin\\clang-cl.exe",
+                "bin\\clang-cpp.exe",
+                "bin\\lld.exe",
+                "bin\\lld-link.exe",
+                "bin\\llvm-ar.exe",
+                "bin\\llvm-config.exe",
+                "bin\\llvm-nm.exe",
+                "bin\\llvm-objdump.exe",
+                "bin\\llvm-ranlib.exe",
+                "bin\\llvm-readobj.exe",
+                "bin\\llvm-strip.exe",
+                "bin\\llvm-symbolizer.exe",
+                "bin\\llc.exe",
+                "bin\\lli.exe",
+                "bin\\opt.exe"
+            ],
+            "env_add_path": "bin"
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/llvm/llvm-project",
+        "regex": "llvmorg-([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/clang+llvm-$version-x86_64-pc-windows-msvc.tar.xz",
+                "extract_dir": "clang+llvm-$version-x86_64-pc-windows-msvc"
+            }
+        }
+    }
+}
